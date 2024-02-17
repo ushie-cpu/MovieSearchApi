@@ -1,5 +1,10 @@
+using Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddMemoryCache();
+builder.Services.AddHttpClient<OmdbService>();
+builder.Services.AddScoped<OmdbService>();
 // Add services to the container.
 
 builder.Services.AddControllers();
